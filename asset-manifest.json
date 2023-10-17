@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/jet-web/static/css/main.2a7998f6.css",
+    "main.js": "/jet-web/static/js/main.3dae85fd.js",
+    "static/js/787.633816a4.chunk.js": "/jet-web/static/js/787.633816a4.chunk.js",
+    "static/media/airbg.jpg": "/jet-web/static/media/airbg.6f1433598c9a4cc66856.jpg",
+    "static/media/logobg.png": "/jet-web/static/media/logobg.166dadb0a3532e8afa1b.png",
+    "index.html": "/jet-web/index.html",
+    "static/media/call.svg": "/jet-web/static/media/call.bf1f8acb969066954f7d62773d9808d2.svg",
+    "static/media/ham.svg": "/jet-web/static/media/ham.677fe29bf490bd2e7ba6f3ed804fe02c.svg",
+    "main.2a7998f6.css.map": "/jet-web/static/css/main.2a7998f6.css.map",
+    "main.3dae85fd.js.map": "/jet-web/static/js/main.3dae85fd.js.map",
+    "787.633816a4.chunk.js.map": "/jet-web/static/js/787.633816a4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2a7998f6.css",
+    "static/js/main.3dae85fd.js"
+  ]
+}
