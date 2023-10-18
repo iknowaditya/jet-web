@@ -1,31 +1,32 @@
 import React from "react";
+import { motion } from "framer-motion";
 import airbg from "../Assets/airbg.jpg";
 
 function Hero() {
   return (
     <section
-      className="flex flex-col h-screen items-center "
+      className="flex flex-col w-full h-[800px]  xl:h-[900px] 2xl:h-[1200px] items-center "
       style={{
         backgroundImage: `url(${airbg})`,
         backgroundSize: "cover",
-        backgroundPosition: "bottom",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div class="relative px-6 lg:px-8">
-        <div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-80 sm:pb-40 ">
-          <div>
-            <div>
-              <h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl dark:text-gray-100">
-                Title of your website
-              </h1>
-              <p class="mt-6 text-lg leading-8 text-gray-600 sm:text-center dark:text-gray-200">
-                Long description of your website, Long description of your
-                website, Long description of your website, Long description of
-                your website, Long description of your website,
-              </p>
-            </div>
-          </div>
+      <div className=" flex flex-col items-center justify-center text-neutral-300 text-center ">
+        <div className=" pt-[26rem] sm:pt-[28rem] xs:pt-[26rem] lg:pt-[29rem] xl:pt-[32rem] 2xl:[65rem] ">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl 3xl:text-8xl text-center text-white font-black leading-10"
+          >
+            Elevate Your Expectations
+            <br /> <span className="text-teal-400">Elevate</span> Your Journey.
+          </motion.h1>
+          <p className="mt-3 text-gray-300 font-normal text-center text-lg sm:text-xl">
+            Where Every Path Leads to a New Discovery.
+          </p>
         </div>
       </div>
     </section>

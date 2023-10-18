@@ -43,7 +43,7 @@ function Navbar() {
         >
           <img src={call} alt="logo" width={25} height={25} />
           <h1 className="text-white items-center justify-center">
-            +1 -(401) 4054653
+            +1 -(401) 405-4653
           </h1>
         </motion.div>
         <motion.img
