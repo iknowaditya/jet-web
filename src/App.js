@@ -1,14 +1,23 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
-import Hero from "./Components/Hero";
+
+import Home from "./routes/Home";
+import Book from "./routes/BookNow";
+import ContactUs from "./routes/ContactUs";
+import Fleet from "./routes/Fleet";
+import Experience from "./routes/Experience";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Hero />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/booknow" element={<Book />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/fleet" element={<Fleet />} />
+        <Route path="/experience" element={<Experience />} />
+      </Routes>
     </div>
   );
 }
