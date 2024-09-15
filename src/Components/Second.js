@@ -1,85 +1,224 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React from "react";
+// import { AnimationOnScroll } from "react-animation-on-scroll";
+// import "animate.css/animate.min.css";
 import air1 from "../Assets/air1.jpg";
-import air2 from "../Assets/air2.jpeg";
-import air3 from "../Assets/air3.jpg";
-import air4 from "../Assets/air4.jpg";
+import air2 from "../Assets/light.jpg";
+import air3 from "../Assets/Midsize Jet.jpg";
+import air4 from "../Assets/Super Mid Size.jpg";
+import air5 from "../Assets/air3.jpg";
+import air6 from "../Assets/HeavyJet.jpg";
 
 const Second = () => {
-  const [containerControls, setContainerControls] = useState("hidden");
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      setContainerControls("visible");
-    }
-  }, [inView]);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  const items = [
-    { image: air1, text: "Very Light Jets " },
-    { image: air2, text: "Small Light Jets" },
-    { image: air3, text: "Super Light Jets" },
-    { image: air4, text: "Midsize Cabin Jets" },
-    { image: air4, text: "Super Midsize Cabin Jets" },
-    { image: air4, text: "Heavy Jets" },
-    { image: air2, text: "Executive Liners/Bizliners" },
-    { image: air2, text: "Business jets" },
-  ];
-
   return (
-    <div className="py-20 bg-neutral-100">
-      <div className="relative z-20 text-center">
-        <h2 className="text-xl font-bold lg:text-4xl md:text-2xl font-body tracking-tighter  leading-relaxed">
-          What are you looking for
-          <span className="text-teal-500 text-5xl">?</span>
-        </h2>
-        <p className="px-6 pt-3 text-sm text-green-darker lg:text-lg md:text-base md:px-0 font-body tracking-tighter ">
-          Check out our offerings for different types of Jets
-        </p>
-      </div>
-      <motion.div
-        ref={ref}
-        variants={containerVariants}
-        initial="hidden"
-        animate={containerControls}
-        className="container relative z-40 mx-auto mt-12"
-      >
-        <div className="flex flex-wrap justify-center mx-auto lg:w-full md:w-5/6 xl:shadow-small-blue">
-          {items.map((item, index) => (
-            <motion.a
-              key={index}
-              variants={itemVariants}
-              href="/"
-              className="block w-1/2 py-10 text-center border lg:w-1/4 text-base tracking-tighter leading-relaxed"
-            >
-              <div className="mx-5">
-                <motion.img
-                  src={item.image}
-                  alt=""
-                  className="object-cover w-50 h-60 rounded-xl mx-auto hover:scale-95 transition-transform"
-                />
-              </div>
-              <p className="pt-4 text-sm font-medium capitalize font-body lg:text-lg md:text-base md:pt-6">
-                {item.text}
-              </p>
-            </motion.a>
-          ))}
+    <>
+      <div className="py-12  dot-pattern ">
+        <div className="lg:max-w-[1200px] m-auto  bg-neutral-100 rounded-3xl py-12">
+          <div className="relative z-20 text-center">
+            <h2 className="text-xl font-bold lg:text-4xl md:text-2xl font-bitter_heading tracking-normal  leading-normal  text-neutral-800">
+              What are you looking for
+              <span className="text-teal-500 text-5xl">?</span>
+            </h2>
+            <p className="px-6 pt-3 text-sm text-green-darker lg:text-lg md:text-base md:px-0 font-body tracking-tighter ">
+              Check out our offerings for different types of Jets
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full px-6 lg:px-12 py-12">
+            <div className="relative mx-auto w-full">
+              <a
+                href="/"
+                className={`relative inline-block duration-500 ease-in-out transition-transform transform hover:-translate-y-1 w-full animate__animated animate__fadeInUp`}
+                // style={{ animationDuration: fadeInUpDuration }}
+              >
+                <div className="shadow p-4 rounded-lg bg-white h-[350px]">
+                  <div className="flex justify-center relative rounded-lg overflow-hidden h-52">
+                    <div className="transition-transform duration-500 transform ease-in-out hover:scale-105 w-full">
+                      <div className="absolute inset-0   ">
+                        <img
+                          src={air1}
+                          alt="contact"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <h2
+                      className="font-medium text-base md:text-lg text-gray-800 line-clamp-1"
+                      title="New York"
+                    >
+                      Very Light Jet
+                    </h2>
+                    <p className="mt-2 text-sm text-gray-800 ">
+                      Efficient and Affordable Aviation for Short-Distance
+                      Travel with Very Light Jets.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div className="relative mx-auto w-full">
+              <a
+                href="/"
+                className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-1 w-full"
+              >
+                <div className="shadow p-4 rounded-lg bg-white h-[350px]">
+                  <div className="flex justify-center relative rounded-lg overflow-hidden h-52">
+                    <div className="transition-transform duration-500 transform ease-in-out hover:scale-105 w-full">
+                      <div className="absolute inset-0   ">
+                        <img
+                          src={air2}
+                          alt="contact"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <h2
+                      className="font-medium text-base md:text-lg text-gray-800 line-clamp-1"
+                      title="New York"
+                    >
+                      Light Jet
+                    </h2>
+                    <p className="mt-2 text-sm text-gray-800 ">
+                      Seamless Business Travel-Experience Comfort and Speed with
+                      Modern Light Jets.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div className="relative mx-auto w-full">
+              <a
+                href="/"
+                className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-1 w-full"
+              >
+                <div className="shadow p-4 rounded-lg bg-white h-[350px]">
+                  <div className="flex justify-center relative rounded-lg overflow-hidden h-52">
+                    <div className="transition-transform duration-500 transform ease-in-out hover:scale-105 w-full">
+                      <div className="absolute inset-0   ">
+                        <img
+                          src={air3}
+                          alt="contact"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <h2 className="font-medium text-base md:text-lg text-gray-800">
+                      Midsize Cabin Jets
+                    </h2>
+                    <p className="mt-2 text-sm text-gray-800 ">
+                      Midsize Cabin Jets Redefining Air Travel Comfort.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div className="relative mx-auto w-full">
+              <a
+                href="/"
+                className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-1 w-full"
+              >
+                <div className="shadow p-4 rounded-lg bg-white h-[350px]">
+                  <div className="flex justify-center relative rounded-lg overflow-hidden h-52">
+                    <div className="transition-transform duration-500 transform ease-in-out hover:scale-105 w-full">
+                      <div className="absolute inset-0   ">
+                        <img
+                          src={air4}
+                          alt="contact"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <h2 className="font-medium text-base md:text-lg text-gray-800 line-clamp-1">
+                      Super Midsize Cabin Jets
+                    </h2>
+                    <p className="mt-2 text-sm text-gray-800 ">
+                      This aircraft offering a perfect blend of spacious luxury
+                      for elevated air travel experiences.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div className="relative mx-auto w-full">
+              <a
+                href="/"
+                className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-1 w-full"
+              >
+                <div className="shadow p-4 rounded-lg bg-white h-[350px]">
+                  <div className="flex justify-center relative rounded-lg overflow-hidden h-52">
+                    <div className="transition-transform duration-500 transform ease-in-out hover:scale-105 w-full">
+                      <div className="absolute inset-0   ">
+                        <img
+                          src={air5}
+                          alt="contact"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <h2 className="font-medium text-base md:text-lg text-gray-800 line-clamp-1">
+                      Heavy Jets
+                    </h2>
+                    <p className="mt-2 text-sm text-gray-800 ">
+                      Its spacious and powerful aircraft designed for
+                      comfortable, and long-range travel experiences.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div className="relative mx-auto w-full">
+              <a
+                href="/"
+                className="relative inline-block duration-300 ease-in-out transition-transform transform hover:-translate-y-1 w-full"
+              >
+                <div className="shadow p-4 rounded-lg bg-white h-[350px]">
+                  <div className="flex justify-center relative rounded-lg overflow-hidden h-52">
+                    <div className="transition-transform duration-500 transform ease-in-out hover:scale-105 w-full">
+                      <div className="absolute inset-0   ">
+                        <img
+                          src={air6}
+                          alt="contact"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <h2 className="font-medium text-base md:text-lg text-gray-800 ">
+                      Executive Liners
+                    </h2>
+                    <p className="mt-2 text-sm text-gray-800 ">
+                      Its designed for stylish, efficient, and comfortable
+                      travel experiences for business travelers.
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -5,7 +5,7 @@ import airbg from "../Assets/airbg.jpg";
 function Hero() {
   return (
     <section
-      className="flex flex-col w-full h-[800px]  xl:h-[900px] 2xl:h-[1200px] items-center "
+      className="flex flex-col w-full h-[800px] xl:h-[900px] 2xl:h-[1200px] items-center "
       style={{
         backgroundImage: `url(${airbg})`,
         backgroundSize: "cover",
@@ -24,9 +24,14 @@ function Hero() {
             Elevate Your Expectations
             <br /> <span className="text-teal-400">Elevate</span> Your Journey.
           </motion.h1>
-          <p className="mt-3 text-gray-300 font-normal text-center text-lg sm:text-xl">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="mt-3 text-gray-300 font-normal text-center text-base lg:text-xl"
+          >
             Where Every Path Leads to a New Discovery.
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>

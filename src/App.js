@@ -1,23 +1,27 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Home from "./routes/Home";
-import Book from "./routes/BookNow";
-import ContactUs from "./routes/ContactUs";
-import Fleet from "./routes/Fleet";
-import Experience from "./routes/Experience";
+const Home = lazy(() => import("./routes/Home"));
+const Book = lazy(() => import("./routes/BookNow"));
+const ContactUs = lazy(() => import("./routes/ContactUs"));
+const Fleet = lazy(() => import("./routes/Fleet"));
+const ExperienceJet = lazy(() => import("./routes/ExperienceJet"));
+const Why = lazy(() => import("./routes/Why"));
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/booknow" element={<Book />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/fleet" element={<Fleet />} />
-        <Route path="/experience" element={<Experience />} />
-      </Routes>
+      <Suspense fallback={<div>JetLyfly is Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/booknow" element={<Book />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/fleet" element={<Fleet />} />
+          <Route path="/experience" element={<ExperienceJet />} />
+          <Route path="/whyus" element={<Why />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }
